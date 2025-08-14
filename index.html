@@ -1,0 +1,118 @@
+<DOCTYPE html>
+    <html land="ru">
+        <head>
+            <meta charset="utf-8">
+              <link rel="stylesheet" href="style.css">
+              <title>итернет магазин</title>
+        </head>
+      
+    <body>
+      
+      <header>
+        <img src="logo_fish.png" alt="логотип" width=500>
+        <h1>🌳The Fishing Corner🌳</h1>
+
+
+        <div class="search">
+          <input type="text" placeholder="Поиск" id="imput_s">
+          <button tupe="submit" onclick="SearchInput()">Найти</button>
+        </div>
+      </header>
+    
+        <h2>Каталог</h2>
+      
+      
+  <main class="products">
+       
+        <div class="card">
+          <h3>палатка 4-6 местная</h3>
+          <p>23500</p>
+           <button>купить</button>
+           <img src="https://ir-4.ozone.ru/s3/multimedia-7/c1000/6613109215.jpg">
+
+        </div>
+     
+        
+        <div class="card">
+          
+          <h3>рудзак походный</h3>
+          <p>4500</p>
+          <button>купить</button>
+           <img src="https://ir.ozone.ru/s3/multimedia-j/c1000/6575148979.jpg">
+        </div>
+       
+
+        
+
+        <div class="card">
+        
+          <h3>стол складной</h3>
+          <p>7000</p>
+          <button>купить</button>
+          <img src="https://ir.ozone.ru/s3/multimedia-1-l/c1000/6994527789.jpg">
+        </div>
+        
+        
+        <div class="card">
+
+          <h3>мангал складной</h3>
+          <p>8800</p>
+          <button on>купить</button>
+          <img src="https://tse3.mm.bing.net/th/id/OIP.abUo-9ocFAGSUhe5sSwi6gHaHa?pid=Api&P=0&h=220">
+        </div>
+
+        <div class="card">
+
+        <h3>переход на другой сайт нашего магазина</h3>
+        <button><a href="https://pike.ru/camping/?pn=5">Перейти</a></button>
+       
+        </div>
+</main>     
+      <footer>
+
+
+            pike.ru © 2010 - 2025 | Высококачественная экипировка для активного отдыха от мировых брендов
+
+        Мы на связи
+
+        +7 495 776 65 03
+
+        Обратная связь
+        WhatsApp
+
+        info@pike.ru
+
+
+      </footer>
+    </body>
+
+
+    <script>
+      function buyProduct(name, price){
+alert("Вы купили" + name + "за" + price + "рублей");
+      
+      localStorage.setItem('selectedProduct', JSON.stringify({name, price}));
+          window.location.href = 'product.html';
+      }
+
+      function SearchInput() {
+      const imput =
+      document.getElementById('imput_s'). value.toLowerCase();
+      const  card =document.querySelectorAll(".card");
+        card.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(imput)) {
+            card.style.display = "block";
+            alert("товар найден");
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+
+            }
+           
+    </script>  
+    </html>
+         
+          
